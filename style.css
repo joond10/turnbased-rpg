@@ -1,0 +1,73 @@
+/* action Menu Styling! */
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+#action-menu {
+  position: absolute;
+  bottom: 10;
+  /* No bullet points */
+  list-style: none;
+  /* The width basically sizes the container otherwise it covers the entire screen left to right */
+  width: 300px;
+  /* Making a border container */
+  border: 1px #fff solid;
+  /* Curved edges */
+  border-radius: 10px;
+  /* By default ul have 40 px on the left */
+  /* 20 px on all sides now */
+  padding: 20px;
+  background: darkblue;
+}
+
+#action-menu li {
+  font-size: 18px;
+  /* Spread them apart */
+  line-height: 2.4em;
+  /* Gives each a bottom border as a seperator */
+  border-bottom: dotted 1px #ddd;
+}
+
+#action-menu button {
+  font-size: 20px;
+  background: darkblue;
+  color: white;
+}
+
+/* Pseudo selector to target last link; refer to last module  */
+#action-menu li:last-child {
+  border: none;
+}
+
+#action-menu li button:hover {
+  color: darkgrey;
+}
+
+#player {
+  margin-top: 150px;
+  height: 400px;
+  width: 450px;
+}
+
+#enemy {
+  padding-left: 300px;
+  height: 500px;
+}
+
+#speech {
+  /* No bullet points */
+  position: absolute;
+  right: 0;
+  list-style: none;
+  color: white;
+  font-size: 20px;
+  width: 300px;
+  border: 1px #ddd solid;
+  border-radius: 10px;
+  /* By default ul have 40 px on the left */
+  /* 20 px on all sides now */
+  padding: 20px;
+  background: darkblue;
+}
