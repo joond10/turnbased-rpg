@@ -19,8 +19,7 @@
     <div class="flex">
       <img
         id="player"
-        src="img/playerdefaultstanding.png
-      "
+        src="img/playerdefaultstanding.png"
         alt="Player Character"
       />
       <img id="enemy" src="img/enemydefaultstanding.png" alt="Enemy" />
@@ -28,10 +27,13 @@
 
     <div class="flex">
       <ul id="action-menu">
-        <li><button class="btn" id="attack">Attack</button></li>
-        <li><button class="btn" id="defend">Defend</button></li>
+        <p id="player-speech">
+          "Today is the day that you LOSE! DRAW YOUR SWORD!"
+        </p>
+        <li><button class="btn" id="attack" hidden>Attack</button></li>
+        <li><button class="btn" id="defend" hidden>Defend</button></li>
       </ul>
-      <div id="speech">
+      <div id="enemy-speech">
         <p>
           "You're sorely mistaken if you think you can beat me, little
           brother..."
