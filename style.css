@@ -6,18 +6,11 @@
 }
 
 #action-menu {
-  position: absolute;
-  bottom: 10;
-  /* No bullet points */
+  left: 0;
   list-style: none;
-  /* The width basically sizes the container otherwise it covers the entire screen left to right */
   width: 300px;
-  /* Making a border container */
   border: 1px #fff solid;
-  /* Curved edges */
   border-radius: 10px;
-  /* By default ul have 40 px on the left */
-  /* 20 px on all sides now */
   padding: 20px;
   background: darkblue;
 }
@@ -30,7 +23,7 @@
   border-bottom: dotted 1px #ddd;
 }
 
-#action-menu button {
+.btn {
   font-size: 20px;
   background: darkblue;
   color: white;
@@ -41,33 +34,65 @@
   border: none;
 }
 
-#action-menu li button:hover {
-  color: darkgrey;
+.btn:hover {
+  color: coral;
 }
 
 #player {
-  margin-top: 150px;
   height: 400px;
   width: 450px;
 }
 
 #enemy {
-  padding-left: 300px;
-  height: 500px;
+  height: 400px;
+  width: 450px;
+}
+.flex {
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #speech {
-  /* No bullet points */
-  position: absolute;
-  right: 0;
-  list-style: none;
   color: white;
   font-size: 20px;
   width: 300px;
-  border: 1px #ddd solid;
   border-radius: 10px;
-  /* By default ul have 40 px on the left */
-  /* 20 px on all sides now */
   padding: 20px;
   background: darkblue;
+}
+
+#player-health {
+  font-size: 18px;
+  background: green;
+  height: 20px;
+  width: 300px;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#enemy-health {
+  font-size: 18px;
+  background: green;
+  height: 20px;
+  width: 300px;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#announcer {
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-size: 20px;
+  width: 300px;
+  border-radius: 10px;
+  padding: 20px;
+  background: darkblue;
+}
+
+#announcer button {
+  margin-top: 10px;
 }

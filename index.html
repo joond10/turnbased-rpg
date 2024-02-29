@@ -7,17 +7,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <img id="player" src="img/playerdefault.png" alt="Player Character" />
-    <img id="enemy" src="img/enemydefault.png" alt="Enemy" />
-    <ul id="action-menu">
-      <li><button id="attack">Attack</button></li>
-      <li><button id="defend">Defend</button></li>
-    </ul>
-    <div id="speech">
-      <p>
-        You're sorely mistaken if you think you can beat me, little brother...
-      </p>
+    <div class="flex">
+      <div id="player-health">
+        <p>100 HP</p>
+      </div>
+      <div id="enemy-health">
+        <p>100 HP</p>
+      </div>
     </div>
+
+    <div class="flex">
+      <img
+        id="player"
+        src="img/playerdefaultstanding.png
+      "
+        alt="Player Character"
+      />
+      <img id="enemy" src="img/enemydefaultstanding.png" alt="Enemy" />
+    </div>
+
+    <div class="flex">
+      <ul id="action-menu">
+        <li><button class="btn" id="attack">Attack</button></li>
+        <li><button class="btn" id="defend">Defend</button></li>
+      </ul>
+      <div id="speech">
+        <p>
+          "You're sorely mistaken if you think you can beat me, little
+          brother..."
+        </p>
+      </div>
+    </div>
+
+    <div id="announcer">
+      <p>A fated battle between two brothers!!</p>
+      <button class="btn" id="begin">Begin</button>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
