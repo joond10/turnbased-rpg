@@ -1,8 +1,12 @@
 /* action Menu Styling! */
+
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 * {
   margin: 0px;
   box-sizing: border-box;
-  font-family: monospace;
+  font-family: "VT323", monospace;
+  font-weight: 400;
 }
 
 body {
@@ -15,10 +19,10 @@ body {
   left: 0;
   list-style: none;
   width: 300px;
-  border: 1px #fff solid;
+  border: 3px lightgrey solid;
   border-radius: 10px;
   padding: 20px;
-  background: darkblue;
+  background-image: linear-gradient(to right, darkblue, rgb(2, 2, 165));
 }
 
 #action-menu li {
@@ -77,19 +81,19 @@ body {
   width: 300px;
   border-radius: 10px;
   padding: 20px;
-  background: darkblue;
-  border: 1px #fff solid;
+  background-image: linear-gradient(to right, darkblue, rgb(2, 2, 165));
+  border: 3px lightgrey solid;
 }
 
 #player-health {
   font-size: 25px;
-  background: green;
+  background-image: linear-gradient(to right, darkgreen, lightgreen);
   height: 30px;
   width: 300px;
   color: white;
   border-radius: 10px;
   text-align: center;
-  border: 1px #fff solid;
+  border: 2px #fff solid;
 }
 
 #enemy-health {
@@ -98,13 +102,13 @@ body {
   right: 0;
   /* right justified upon player death  */
   font-size: 25px;
-  background: green;
+  background-image: linear-gradient(to left, darkgreen, lightgreen);
   height: 30px;
   width: 300px;
   color: white;
   border-radius: 10px;
   text-align: center;
-  border: 1px #fff solid;
+  border: 2px #fff solid;
 }
 
 #announcer {
@@ -115,8 +119,8 @@ body {
   width: 300px;
   border-radius: 10px;
   padding: 20px;
-  background: darkblue;
-  border: 1px #fff solid;
+  background-image: linear-gradient(to right, darkblue, rgb(2, 2, 165));
+  border: 3px lightgrey solid;
 }
 
 #announcer button {
