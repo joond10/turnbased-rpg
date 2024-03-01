@@ -126,3 +126,8 @@ body {
 #announcer button {
   margin-top: 10px;
 }
+
+#musicmenu {
+  position: absolute;
+  bottom: 0;
+}

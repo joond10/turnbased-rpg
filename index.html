@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>DUEL!</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/da6856aca5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <audio
@@ -12,6 +16,7 @@
       src="https://fi.zophar.net/soundfiles/nintendo-snes-spc/final-fantasy-iv/22%20Suspicion.mp3"
       loop
       autoplay
+      muted
     ></audio>
 
     <div class="flex">
@@ -48,10 +53,17 @@
       </div>
     </div>
 
-    <div id="announcer">
-      <p id="announcer-speech">A fated battle between two brothers!!</p>
-      <button class="btn" id="begin">Begin</button>
-      <button class="btn" id="retry" hidden>Try again?</button>
+    <div class="flex">
+      <div id="musicmenu">
+        <button class="btn" id="musictoggle">
+          <i class="fa-solid fa-music"></i><span> Toggle music</span>
+        </button>
+      </div>
+      <div id="announcer">
+        <p id="announcer-speech">A fated battle between two brothers!!</p>
+        <button class="btn" id="begin">Begin</button>
+        <button class="btn" id="retry" hidden>Try again?</button>
+      </div>
     </div>
 
     <script src="script.js"></script>

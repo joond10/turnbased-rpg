@@ -22,7 +22,8 @@ let spell = document.querySelector("#spell"); //Open spell menu
 let heal = document.querySelector("#heal"); //Heal
 let next = document.querySelector("#next"); //Prompts enemy to attack
 let retry = document.querySelector("#retry"); //Game over button
-let ending = document.querySelector("#continue");
+let ending = document.querySelector("#continue"); //Initiates ending sequence
+let musictoggle = document.querySelector("#musictoggle"); //Toggle to play/mute music
 //Speech bubbles
 let enemySpeech = document.querySelector("#enemy-speech");
 let playerSpeech = document.querySelector("#player-speech");
@@ -32,6 +33,7 @@ let playerHealth = document.querySelector("#player-health");
 
 //Music
 let music = document.querySelector("#music");
+//Music icon
 
 //Animations [0, 1]
 let animation = document.querySelectorAll("img");
@@ -124,7 +126,10 @@ function playerReceiveDamage(defense) {
   //Turn defense back off
   defenseStance = false;
   playerHealth.style.width = playerCurrentHealthBarWidth + "px";
-  playerHealth.innerText = playerCurrentHealth + "HP";
+  playerHealth.innerText =
+    playerCurrentHealth === 10
+      ? playerCurrentHealth
+      : playerCurrentHealth + "HP";
   if (playerCurrentHealth < 70) {
     playerHealth.style.background =
       "linear-gradient(to right, darkred, orange)";
@@ -210,7 +215,8 @@ retry.addEventListener("click", function () {
 
 defend.addEventListener("click", function () {
   playerDefendAnimation();
-  announcerSpeech.innerText = "Next attack damage reduced by half!!";
+  announcerSpeech.innerText = "67% damage reduction on next attack!!";
+  enemySpeech.innerText = "A shield?!";
   hideActionMenu();
   next.removeAttribute("hidden");
   defenseStance = true;
@@ -225,13 +231,14 @@ heal.addEventListener("click", function () {
   playerHealAnimation();
   heal.setAttribute("hidden", true);
   next.removeAttribute("hidden");
-  announcerSpeech.innerText = "Healed 50 HP!!";
-  enemySpeech.innerText = `"WHAT?! IMPOSSIBLE!"`;
+  enemySpeech.innerText = `"WHAT?! IMPOSSIBLE! Where did you learn such sorcery?!"`;
   playerCurrentHealth += 50;
   if (playerCurrentHealth > 100) {
+    announcerSpeech.innerText = "Full health!!";
     playerCurrentHealth = playerInitialHealth;
     playerCurrentHealthBarWidth = playerFullHealthBarWidth;
   } else {
+    announcerSpeech.innerText = "50 HP restored!!";
     playerCurrentHealthBarWidth += (50 / 100) * playerFullHealthBarWidth;
   }
   playerHealth.style.width = playerCurrentHealthBarWidth + "px";
@@ -254,6 +261,7 @@ function victory() {
 }
 
 ending.addEventListener("click", function () {
+  playerHealth.remove();
   playerSpeech.innerText = `"I did it... I DID IT!"`;
   retry.innerHTML = "Play again?";
   animation[0].src = "img/playerdefault.png";
@@ -279,4 +287,10 @@ ending.addEventListener("click", function () {
     spritesThankingAnimation();
     retry.removeAttribute("hidden");
   }, 15000);
+});
+
+musictoggle.addEventListener("click", function () {
+  music.muted = !music.muted;
+  let span = musictoggle.querySelector("span");
+  span.innerText = music.muted ? " Toggle music on" : " Toggle music off";
 });
