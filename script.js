@@ -228,7 +228,12 @@ heal.addEventListener("click", function () {
   announcerSpeech.innerText = "Healed 50 HP!!";
   enemySpeech.innerText = `"WHAT?! IMPOSSIBLE!"`;
   playerCurrentHealth += 50;
-  playerCurrentHealthBarWidth += (50 / 100) * playerFullHealthBarWidth;
+  if (playerCurrentHealth > 100) {
+    playerCurrentHealth = playerInitialHealth;
+    playerCurrentHealthBarWidth = playerFullHealthBarWidth;
+  } else {
+    playerCurrentHealthBarWidth += (50 / 100) * playerFullHealthBarWidth;
+  }
   playerHealth.style.width = playerCurrentHealthBarWidth + "px";
   playerHealth.innerText = playerCurrentHealth + "HP";
   if (playerCurrentHealth > 70) {
