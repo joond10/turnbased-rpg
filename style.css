@@ -15,8 +15,22 @@ body {
   background-position: center;
 }
 
+/* Flex box */
+
+.flex {
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex #player,
+#enemy {
+  margin-top: 50px;
+}
+
+/* Action menu and button styling */
+
 #action-menu {
-  left: 0;
   list-style: none;
   width: 300px;
   border: 3px lightgrey solid;
@@ -28,10 +42,8 @@ body {
 #action-menu li {
   text-align: center;
   font-size: 18px;
-  /* Spread them apart */
-  line-height: 2.4em;
-  /* Gives each a bottom border as a seperator */
-  border-bottom: hidden dotted 1px #ddd;
+  line-height: 1.8em;
+  border-bottom: hidden 0.5px #ddd;
 }
 
 #action-menu p {
@@ -45,45 +57,12 @@ body {
   color: white;
 }
 
-/* Pseudo selector to target last link; refer to last module  */
-#action-menu li:last-child {
-  border: none;
-}
-
 .btn:hover {
   color: coral;
   cursor: pointer;
 }
 
-#player {
-  height: 400px;
-  width: 450px;
-}
-
-#enemy {
-  height: 400px;
-  width: 450px;
-}
-
-.flex {
-  margin-top: 6px;
-  display: flex;
-  justify-content: space-between;
-}
-.flex #player,
-#enemy {
-  margin-top: 50px;
-}
-
-#enemy-speech {
-  color: white;
-  font-size: 20px;
-  width: 300px;
-  border-radius: 10px;
-  padding: 20px;
-  background-image: linear-gradient(to right, darkblue, rgb(2, 2, 165));
-  border: 3px lightgrey solid;
-}
+/* Health bars */
 
 #player-health {
   font-size: 25px;
@@ -111,9 +90,21 @@ body {
   border: 2px #fff solid;
 }
 
-#announcer {
-  text-align: center;
-  margin: auto;
+/* Sprites */
+
+#player {
+  height: 400px;
+  width: 450px;
+}
+
+#enemy {
+  height: 400px;
+  width: 450px;
+}
+
+/* Speech bubbles */
+
+#enemy-speech {
   color: white;
   font-size: 20px;
   width: 300px;
@@ -123,9 +114,23 @@ body {
   border: 3px lightgrey solid;
 }
 
+#announcer {
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+  background-image: linear-gradient(to right, darkblue, rgb(2, 2, 165));
+  width: 300px;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  border: 3px lightgrey solid;
+}
+
 #announcer button {
   margin-top: 10px;
 }
+
+/* Music toggle  */
 
 #musicmenu {
   position: absolute;

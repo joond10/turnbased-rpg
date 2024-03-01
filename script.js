@@ -1,10 +1,14 @@
-//Enemy health variables
+////////////////////////////////////////////////////////////
+//Variables
+///////////////////////////////////////////////////////////
+
+//Enemy health
 let enemyInitialHealth = 100; //HP
 let enemyCurrentHealth = enemyInitialHealth;
 let enemyFullHealthBarWidth = 300; // (px)
 let enemyCurrentHealthBarWidth = enemyFullHealthBarWidth;
 
-//Player
+//Player health
 let playerInitialHealth = 100; //HP
 let playerCurrentHealth = playerInitialHealth;
 let playerFullHealthBarWidth = 300; // (px)
@@ -13,7 +17,10 @@ let playerCurrentHealthBarWidth = playerFullHealthBarWidth;
 //Defense boolean to reduce damage
 let defenseStance = false;
 
+//////////////////////////////////////////////////////////
 //Selectors
+//////////////////////////////////////////////////////////
+
 //Buttons
 let begin = document.querySelector("#begin"); //Initiates battle
 let attack = document.querySelector("#attack"); //Attack enemy
@@ -24,22 +31,25 @@ let next = document.querySelector("#next"); //Prompts enemy to attack
 let retry = document.querySelector("#retry"); //Game over button
 let ending = document.querySelector("#continue"); //Initiates ending sequence
 let musictoggle = document.querySelector("#musictoggle"); //Toggle to play/mute music
+
 //Speech bubbles
 let enemySpeech = document.querySelector("#enemy-speech");
 let playerSpeech = document.querySelector("#player-speech");
 let announcerSpeech = document.querySelector("#announcer-speech");
+
 //Health bar
 let playerHealth = document.querySelector("#player-health");
 
 //Music
 let music = document.querySelector("#music");
-//Music icon
 
-//Animations [0, 1]
+//Animations
 let animation = document.querySelectorAll("img");
+//////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////
 //Animation change functions
-////////////////////////////////////////////
+//////////////////////////////////////////////////////////
 function playerAttackAnimation() {
   animation[0].src = "img/playerstance.png";
   setTimeout(function () {
@@ -95,71 +105,7 @@ function enemyProudAnimation() {
 //Animation for when player used defend and guards next attack?
 //////////////////////////////////////////////
 
-function enemyReceiveDamage() {
-  enemyWeakenedAnimation();
-  let damage = 20;
-  enemyCurrentHealth -= damage;
-  enemyCurrentHealthBarWidth -= (damage / 100) * enemyFullHealthBarWidth;
-  let enemyHealth = document.querySelector("#enemy-health");
-  enemyHealth.style.width = enemyCurrentHealthBarWidth + "px";
-  enemyHealth.innerText = enemyCurrentHealth + "HP";
-  if (enemyCurrentHealth < 70) {
-    enemyHealth.style.background = "linear-gradient(to left, darkred, orange)";
-    if (enemyCurrentHealth < 50) {
-      enemyHealth.style.background = "linear-gradient(to left, darkred, red)";
-      enemyLowHealthAnimation();
-      if (enemyCurrentHealth <= 0) {
-        enemyDefeatedAnimation();
-        enemyHealth.remove();
-        next.setAttribute("hidden", true);
-        victory();
-      }
-    }
-  }
-}
-
-function playerReceiveDamage(defense) {
-  playerWeakenedAnimation();
-  let damage = defense === true ? 10 : 30;
-  playerCurrentHealth -= damage;
-  playerCurrentHealthBarWidth -= (damage / 100) * playerFullHealthBarWidth;
-  //Turn defense back off
-  defenseStance = false;
-  playerHealth.style.width = playerCurrentHealthBarWidth + "px";
-  playerHealth.innerText =
-    playerCurrentHealth === 10
-      ? playerCurrentHealth
-      : playerCurrentHealth + "HP";
-  if (playerCurrentHealth < 70) {
-    playerHealth.style.background =
-      "linear-gradient(to right, darkred, orange)";
-    if (playerCurrentHealth < 50) {
-      playerHealth.style.background = "linear-gradient(to right, darkred, red)";
-      playerLowHealthAnimation();
-      if (playerCurrentHealth <= 0) {
-        playerDefeatedAnimation();
-        playerHealth.remove();
-        music.src =
-          "https://fi.zophar.net/soundfiles/playstation-psf/final-fantasy-vii/215%20Continue.mp3";
-        gameOver();
-      }
-    }
-  }
-}
-
-function showActionMenu() {
-  attack.removeAttribute("hidden");
-  defend.removeAttribute("hidden");
-  spell.removeAttribute("hidden");
-}
-
-function hideActionMenu() {
-  attack.setAttribute("hidden", true);
-  defend.setAttribute("hidden", true);
-  spell.setAttribute("hidden", true);
-}
-
-//Initiates battle sequence
+//Initiate game function
 begin.addEventListener("click", function () {
   playerSpeech.setAttribute("hidden", true);
   showActionMenu();
@@ -170,47 +116,14 @@ begin.addEventListener("click", function () {
     "https://fi.zophar.net/soundfiles/nintendo-snes-spc/final-fantasy-iv/13%20Fight%202.mp3";
 });
 
-//Player attacks and deals damage to enemy
+//Action menu event handlers
 attack.addEventListener("click", function () {
   playerAttackAnimation();
   enemySpeech.innerText = `"AGH!"`;
-  announcerSpeech.innerText = "20 hit points dealt!!";
+  announcerSpeech.innerText = "20 damage dealt!!";
   next.removeAttribute("hidden");
   enemyReceiveDamage();
   hideActionMenu();
-});
-
-//Enemy attacks and deals damage to player
-next.addEventListener("click", function () {
-  enemyAttackAnimation();
-  enemySpeech.innerText = `"TAKE THIS!"`;
-  if (defenseStance === true) {
-    announcerSpeech.innerText = "10 damage received!!";
-  } else {
-    announcerSpeech.innerText = "30 damage received!!";
-  }
-  next.setAttribute("hidden", true);
-  showActionMenu();
-  playerReceiveDamage(defenseStance);
-});
-
-//Game over function
-function gameOver() {
-  hideActionMenu();
-  setTimeout(function () {
-    animation[1].src = "img/enemywinner.png";
-  }, 2000); // 2000 milliseconds = 2 seconds
-
-  playerSpeech.removeAttribute("hidden");
-  playerSpeech.innerText = `"This can't be..."`;
-  enemySpeech.innerText = `"You disappoint me."`;
-  announcerSpeech.innerText = "Game over.";
-  retry.removeAttribute("hidden");
-}
-
-//Retry button
-retry.addEventListener("click", function () {
-  location.reload();
 });
 
 defend.addEventListener("click", function () {
@@ -252,12 +165,111 @@ heal.addEventListener("click", function () {
   }
 });
 
+//Prompts enemy attack
+next.addEventListener("click", function () {
+  enemyAttackAnimation();
+  enemySpeech.innerText = `"TAKE THIS!"`;
+  if (defenseStance === true) {
+    announcerSpeech.innerText = "10 damage received!!";
+  } else {
+    announcerSpeech.innerText = "30 damage received!!";
+  }
+  next.setAttribute("hidden", true);
+  showActionMenu();
+  playerReceiveDamage(defenseStance);
+});
+
+//Health bar functions upon damage dealing
+function enemyReceiveDamage() {
+  enemyWeakenedAnimation();
+  let damage = 20;
+  enemyCurrentHealth -= damage;
+  enemyCurrentHealthBarWidth -= (damage / 100) * enemyFullHealthBarWidth;
+  let enemyHealth = document.querySelector("#enemy-health");
+  enemyHealth.style.width = enemyCurrentHealthBarWidth + "px";
+  enemyHealth.innerText = enemyCurrentHealth + "HP";
+  if (enemyCurrentHealth < 70) {
+    enemyHealth.style.background = "linear-gradient(to left, darkred, orange)";
+    if (enemyCurrentHealth < 50) {
+      enemyHealth.style.background = "linear-gradient(to left, darkred, red)";
+      enemyLowHealthAnimation();
+      if (enemyCurrentHealth <= 0) {
+        enemyDefeatedAnimation();
+        enemyHealth.remove();
+        victory();
+      }
+    }
+  }
+}
+
+function playerReceiveDamage(defense) {
+  playerWeakenedAnimation();
+  let damage = defense === true ? 10 : 30;
+  playerCurrentHealth -= damage;
+  playerCurrentHealthBarWidth -= (damage / 100) * playerFullHealthBarWidth;
+  //Turn defense back off
+  defenseStance = false;
+  playerHealth.style.width = playerCurrentHealthBarWidth + "px";
+  playerHealth.innerText =
+    playerCurrentHealth === 10
+      ? playerCurrentHealth
+      : playerCurrentHealth + "HP";
+  if (playerCurrentHealth < 70) {
+    playerHealth.style.background =
+      "linear-gradient(to right, darkred, orange)";
+    if (playerCurrentHealth < 50) {
+      playerHealth.style.background = "linear-gradient(to right, darkred, red)";
+      playerLowHealthAnimation();
+      if (playerCurrentHealth <= 0) {
+        playerDefeatedAnimation();
+        playerHealth.remove();
+        gameOver();
+      }
+    }
+  }
+}
+
+//Helper functions
+function showActionMenu() {
+  attack.removeAttribute("hidden");
+  defend.removeAttribute("hidden");
+  spell.removeAttribute("hidden");
+}
+
+function hideActionMenu() {
+  attack.setAttribute("hidden", true);
+  defend.setAttribute("hidden", true);
+  spell.setAttribute("hidden", true);
+}
+
+//Game over sequence functions
+function gameOver() {
+  music.src =
+    "https://fi.zophar.net/soundfiles/playstation-psf/final-fantasy-vii/215%20Continue.mp3";
+  hideActionMenu();
+  setTimeout(function () {
+    animation[1].src = "img/enemywinner.png";
+  }, 2000); // 2000 milliseconds = 2 seconds
+
+  playerSpeech.removeAttribute("hidden");
+  playerSpeech.innerText = `"This can't be..."`;
+  enemySpeech.innerText = `"You disappoint me."`;
+  announcerSpeech.innerText = "Game over.";
+  retry.removeAttribute("hidden");
+}
+
+retry.addEventListener("click", function () {
+  location.reload();
+});
+
+//Victory sequence functions
 function victory() {
-  enemySpeech.innerText = `"Argh..."`;
-  announcerSpeech.innerText = "Victory!";
   music.src =
     "https://fi.zophar.net/soundfiles/playstation-psf/final-fantasy-vii/111%20Fanfare.mp3";
+  next.setAttribute("hidden", true);
   ending.removeAttribute("hidden");
+  enemySpeech.innerText = `"Argh..."`;
+  announcerSpeech.innerText = "Victory!";
 }
 
 ending.addEventListener("click", function () {
@@ -289,6 +301,7 @@ ending.addEventListener("click", function () {
   }, 15000);
 });
 
+//Music toggle
 musictoggle.addEventListener("click", function () {
   music.muted = !music.muted;
   let span = musictoggle.querySelector("span");
