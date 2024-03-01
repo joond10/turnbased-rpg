@@ -259,7 +259,7 @@ ending.addEventListener("click", function () {
     enemyWeakenedAnimation();
   }, 5000);
   setTimeout(function () {
-    enemySpeech.innerText = `"You've grown strong brother."`;
+    enemySpeech.innerText = `"You've grown strong, brother."`;
   }, 5000);
   setTimeout(function () {
     animation[1].src = "img/enemydefault.png";
