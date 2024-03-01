@@ -4,14 +4,29 @@ let enemyCurrentHealth = enemyInitialHealth;
 let enemyFullHealthBarWidth = 300; // (px)
 let enemyCurrentHealthBarWidth = enemyFullHealthBarWidth;
 
+//Player
+let playerInitialHealth = 100; //HP
+let playerCurrentHealth = playerInitialHealth;
+let playerFullHealthBarWidth = 300; // (px)
+let playerCurrentHealthBarWidth = playerFullHealthBarWidth;
+
 //Defense boolean to reduce damage
 let defenceStance = false;
 
-//Button selectors
+//Selectors
+//Buttons
 let begin = document.querySelector("#begin"); //Initiates battle
 let attack = document.querySelector("#attack"); //Attack enemy
 let defend = document.querySelector("#defend"); //Guard stance to reduce damage
 let next = document.querySelector("#next"); //Prompts enemy to attack
+let retry = document.querySelector("#retry"); //Game over button
+//Speech bubbles
+let enemySpeech = document.querySelector("#enemy-speech");
+let playerSpeech = document.querySelector("#player-speech");
+let announcerSpeech = document.querySelector("#announcer-speech");
+
+//Music
+let music = document.querySelector("#music");
 
 //Animations [0, 1]
 let animation = document.querySelectorAll("img");
@@ -19,28 +34,45 @@ let animation = document.querySelectorAll("img");
 //Animation change functions
 ////////////////////////////////////////////
 function playerAttackAnimation() {
-  animation[0].src = "img/playerattack.png";
-}
-
-function fightingStanceAnimation() {
   animation[0].src = "img/playerstance.png";
+  setTimeout(function () {
+    animation[0].src = "img/playerattack.png";
+  }, 100);
+}
+function enemyAttackAnimation() {
+  animation[1].src = "img/enemystance.png";
+  setTimeout(function () {
+    animation[1].src = "img/enemyattack.png";
+  }, 100);
+}
+function playerFightingStanceAnimation() {
+  animation[0].src = "img/playerstance.png";
+}
+function enemyFightingStanceAnimation() {
   animation[1].src = "img/enemystance.png";
 }
-
 function enemyWeakenedAnimation() {
   animation[1].src = "img/enemyweakened.png";
 }
-
+function playerWeakenedAnimation() {
+  animation[0].src = "img/playerweakened.png";
+}
 function enemyLowHealthAnimation() {
   animation[1].src = "img/enemylowhealth.png";
 }
-
 function enemyDefeatedAnimation() {
   animation[1].src = "img/enemydefeated.png";
+}
+function playerLowHealthAnimation() {
+  animation[0].src = "img/playerlowhealth.png";
+}
+function playerDefeatedAnimation() {
+  animation[0].src = "img/playerdefeated.png";
 }
 //////////////////////////////////////////////
 
 function enemyReceiveDamage() {
+  enemyWeakenedAnimation();
   let damage = 20;
   enemyCurrentHealth -= damage;
   enemyCurrentHealthBarWidth -= (damage / 100) * enemyFullHealthBarWidth;
@@ -53,31 +85,94 @@ function enemyReceiveDamage() {
     if (enemyCurrentHealth < 50) {
       enemyHealth.style.backgroundColor = "darkred";
       enemyLowHealthAnimation();
-      if (enemyCurrentHealth <= 0) {
+      if (enemyCurrentHealth == 0) {
         enemyDefeatedAnimation();
+        enemyHealth.remove();
       }
     }
   }
 }
 
-attack.addEventListener("click", function () {
-  playerAttackAnimation();
-  let enemySpeech = document.querySelector("#enemy-speech");
-  enemySpeech.innerText = "AGH";
-  let announcer = document.querySelector("#announcer");
-  announcer.innerText = "20 hit points dealt!!";
-  enemyReceiveDamage();
-  next.removeAttribute("hidden");
-  attack.setAttribute("hidden", true);
-  defend.setAttribute("hidden", true);
-});
+function playerReceiveDamage() {
+  playerWeakenedAnimation();
+  let damage = 30;
+  playerCurrentHealth -= damage;
+  playerCurrentHealthBarWidth -= (damage / 100) * playerFullHealthBarWidth;
+  let playerHealth = document.querySelector("#player-health");
+  playerHealth.style.width = playerCurrentHealthBarWidth + "px";
+  playerHealth.innerText = playerCurrentHealth + "HP";
+  if (playerCurrentHealth < 70) {
+    playerHealth.style.backgroundColor = "darkorange";
+    //player weakened animation
+    if (playerCurrentHealth < 50) {
+      playerHealth.style.backgroundColor = "darkred";
+      playerLowHealthAnimation();
+      if (playerCurrentHealth <= 0) {
+        playerDefeatedAnimation();
+        playerHealth.remove();
+        music.src =
+          "https://fi.zophar.net/soundfiles/playstation-psf/final-fantasy-vii/215%20Continue.mp3";
+        gameOver();
+      }
+    }
+  }
+}
 
-begin.addEventListener("click", function () {
-  let playerSpeech = document.querySelector("#player-speech");
-  playerSpeech.setAttribute("hidden", true);
+function showActionMenu() {
   attack.removeAttribute("hidden");
   defend.removeAttribute("hidden");
+}
+
+function hideActionMenu() {
+  attack.setAttribute("hidden", true);
+  defend.setAttribute("hidden", true);
+}
+
+//Initiates battle sequence
+begin.addEventListener("click", function () {
+  playerSpeech.setAttribute("hidden", true);
+  showActionMenu();
   begin.setAttribute("hidden", true);
-  fightingStanceAnimation();
+  playerFightingStanceAnimation();
+  enemyFightingStanceAnimation();
+  music.src =
+    "https://fi.zophar.net/soundfiles/nintendo-snes-spc/final-fantasy-iv/13%20Fight%202.mp3";
 });
 
+//Player attacks and deals damage to enemy
+attack.addEventListener("click", function () {
+  playerAttackAnimation();
+  enemySpeech.innerText = `"AGH!"`;
+  announcerSpeech.innerText = "20 hit points dealt!!";
+  enemyReceiveDamage();
+  next.removeAttribute("hidden");
+  hideActionMenu();
+});
+
+//Enemy attacks and deals damage to player
+next.addEventListener("click", function () {
+  enemyAttackAnimation();
+  enemySpeech.innerText = `"TAKE THIS!"`;
+  announcerSpeech.innerText = "30 damage received!!";
+  next.setAttribute("hidden", true);
+  showActionMenu();
+  playerReceiveDamage();
+});
+
+//Game over function
+function gameOver() {
+  hideActionMenu();
+  setTimeout(function () {
+    animation[1].src = "img/enemywinner.png";
+  }, 2000); // 2000 milliseconds = 2 seconds
+
+  playerSpeech.removeAttribute("hidden");
+  playerSpeech.innerText = `"This can't be..."`;
+  enemySpeech.innerText = `"You disappoint me."`;
+  announcerSpeech.innerText = "Game over.";
+  retry.removeAttribute("hidden");
+}
+
+retry.addEventListener("click", function () {
+  location.reload();
+});

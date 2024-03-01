@@ -7,9 +7,8 @@
 
 body {
   background-image: linear-gradient(to right, rgb(27, 128, 223), #feb47b);
-  background-size: cover; 
-  background-position: center; 
-
+  background-size: cover;
+  background-position: center;
 }
 
 #action-menu {
@@ -23,6 +22,7 @@ body {
 }
 
 #action-menu li {
+  text-align: center;
   font-size: 18px;
   /* Spread them apart */
   line-height: 2.4em;
@@ -48,6 +48,7 @@ body {
 
 .btn:hover {
   color: coral;
+  cursor: pointer;
 }
 
 #player {
@@ -92,6 +93,10 @@ body {
 }
 
 #enemy-health {
+  /* Ensures health bar stays  */
+  position: absolute;
+  right: 0;
+  /* right justified upon player death  */
   font-size: 25px;
   background: green;
   height: 30px;

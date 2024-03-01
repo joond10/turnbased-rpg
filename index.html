@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <audio
+      id="music"
+      src="https://fi.zophar.net/soundfiles/nintendo-snes-spc/final-fantasy-iv/22%20Suspicion.mp3"
+      autoplay
+    ></audio>
+
     <div class="flex">
       <div id="player-health">
         <p>100 HP</p>
@@ -39,11 +45,10 @@
     </div>
 
     <div id="announcer">
-      <p>A fated battle between two brothers!!</p>
+      <p id="announcer-speech">A fated battle between two brothers!!</p>
       <button class="btn" id="begin">Begin</button>
+      <button class="btn" id="retry" hidden>Try again?</button>
     </div>
-
-    <audio src=""></audio>
 
     <script src="script.js"></script>
   </body>
