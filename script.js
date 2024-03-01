@@ -11,7 +11,7 @@ let playerFullHealthBarWidth = 300; // (px)
 let playerCurrentHealthBarWidth = playerFullHealthBarWidth;
 
 //Defense boolean to reduce damage
-let defenceStance = false;
+let defenseStance = false;
 
 //Selectors
 //Buttons
@@ -45,30 +45,34 @@ function enemyAttackAnimation() {
     animation[1].src = "img/enemyattack.png";
   }, 100);
 }
+function playerDefendAnimation() {
+  animation[0].src = "img/playerdefend.png";
+}
 function playerFightingStanceAnimation() {
   animation[0].src = "img/playerstance.png";
 }
 function enemyFightingStanceAnimation() {
   animation[1].src = "img/enemystance.png";
 }
-function enemyWeakenedAnimation() {
-  animation[1].src = "img/enemyweakened.png";
-}
 function playerWeakenedAnimation() {
   animation[0].src = "img/playerweakened.png";
 }
-function enemyLowHealthAnimation() {
-  animation[1].src = "img/enemylowhealth.png";
-}
-function enemyDefeatedAnimation() {
-  animation[1].src = "img/enemydefeated.png";
+function enemyWeakenedAnimation() {
+  animation[1].src = "img/enemyweakened.png";
 }
 function playerLowHealthAnimation() {
   animation[0].src = "img/playerlowhealth.png";
 }
+function enemyLowHealthAnimation() {
+  animation[1].src = "img/enemylowhealth.png";
+}
 function playerDefeatedAnimation() {
   animation[0].src = "img/playerdefeated.png";
 }
+function enemyDefeatedAnimation() {
+  animation[1].src = "img/enemydefeated.png";
+}
+//Animation for when player used defend and guards next attack?
 //////////////////////////////////////////////
 
 function enemyReceiveDamage() {
@@ -93,11 +97,13 @@ function enemyReceiveDamage() {
   }
 }
 
-function playerReceiveDamage() {
+function playerReceiveDamage(defense) {
   playerWeakenedAnimation();
-  let damage = 30;
+  let damage = defense === true ? 10 : 30;
   playerCurrentHealth -= damage;
   playerCurrentHealthBarWidth -= (damage / 100) * playerFullHealthBarWidth;
+  //Turn defense back off
+  defenseStance = false;
   let playerHealth = document.querySelector("#player-health");
   playerHealth.style.width = playerCurrentHealthBarWidth + "px";
   playerHealth.innerText = playerCurrentHealth + "HP";
@@ -153,10 +159,14 @@ attack.addEventListener("click", function () {
 next.addEventListener("click", function () {
   enemyAttackAnimation();
   enemySpeech.innerText = `"TAKE THIS!"`;
-  announcerSpeech.innerText = "30 damage received!!";
+  if (defenseStance === true) {
+    announcerSpeech.innerText = "10 damage received!!";
+  } else {
+    announcerSpeech.innerText = "30 damage received!!";
+  }
   next.setAttribute("hidden", true);
   showActionMenu();
-  playerReceiveDamage();
+  playerReceiveDamage(defenseStance);
 });
 
 //Game over function
@@ -173,6 +183,15 @@ function gameOver() {
   retry.removeAttribute("hidden");
 }
 
+//Retry button
 retry.addEventListener("click", function () {
   location.reload();
+});
+
+defend.addEventListener("click", function () {
+  playerDefendAnimation();
+  announcerSpeech.innerText = "Next attack damage reduced by half!!";
+  hideActionMenu();
+  next.removeAttribute("hidden");
+  defenseStance = true;
 });
