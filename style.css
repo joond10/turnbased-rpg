@@ -15,6 +15,13 @@ body {
   background-position: center;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: coral;
+}
 /* Flex box */
 
 .flex {

@@ -31,6 +31,7 @@ let next = document.querySelector("#next"); //Prompts enemy to attack
 let retry = document.querySelector("#retry"); //Game over button
 let ending = document.querySelector("#continue"); //Initiates ending sequence
 let musictoggle = document.querySelector("#musictoggle"); //Toggle to play/mute music
+let credits = document.querySelector("#credits");
 
 //Speech bubbles
 let enemySpeech = document.querySelector("#enemy-speech");
@@ -298,6 +299,7 @@ ending.addEventListener("click", function () {
     enemySpeech.innerText = `"Thanks for playing!`;
     spritesThankingAnimation();
     retry.removeAttribute("hidden");
+    credits.removeAttribute("hidden");
   }, 15000);
 });
 
@@ -307,3 +309,6 @@ musictoggle.addEventListener("click", function () {
   let span = musictoggle.querySelector("span");
   span.innerText = music.muted ? " Toggle music on" : " Toggle music off";
 });
+
+//Credits button
+credits.addEventListener("click", function () {});
