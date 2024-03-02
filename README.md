@@ -39,6 +39,10 @@
 > - Different buttons shown depending on game execution
 > - Toggle music button to mute or unmute audio music
 
+## Project challenges
+
+> I went into this project not knowing anything about the flexbox layout model in CSS. Initially, I tried to design and develop the styling without it which proved to be difficult. In the the process, I learned about flexbox which provided a more efficient way to arrange, align, and distribute space among items in a container, even when their size is unknown or dynamic.
+
 ## Credits
 
 ### Sprites
