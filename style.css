@@ -115,13 +115,13 @@ a:hover {
 /* Sprites */
 
 #player {
-  height: 200px;
-  width: 450px;
+  height: 25rem;
+  /* height: 400px; */
 }
 
 #enemy {
-  height: 200px;
-  width: 450px;
+  height: 25rem;
+  /* height: 400px; */
 }
 
 /* Speech bubbles */
