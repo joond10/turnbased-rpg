@@ -115,12 +115,12 @@ a:hover {
 /* Sprites */
 
 #player {
-  height: 400px;
+  height: 200px;
   width: 450px;
 }
 
 #enemy {
-  height: 400px;
+  height: 200px;
   width: 450px;
 }
 
