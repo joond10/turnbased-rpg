@@ -157,10 +157,10 @@ a:hover {
 /* Music toggle  */
 
 #musicmenu {
-  /* position: absolute; */
-  /* bottom: 10px; */
+  position: absolute;
+  bottom: 1%;
 }
 
 .pictures {
-  height: 60%;
+  height: 40%;
 }
