@@ -1,5 +1,7 @@
 # DUEL!
 
+ <img src="assets/opening-sequence.png" alt="Opening sequence"/>
+
 > DUEL! is a dynamic web application designed to emulate the magic of classic RPGs. It provides a fully functional turn-based combat system reminiscent of iconic titles such as Final Fantasy and Dragon Quest. DUEL! utilizes DOM manipulation to enhance interactivity, providing players with an action menu where each button triggers a unique sequence. Additionally, there's a fully built victory sequence to celebrate winning and a game over sequence for defeats.
 
 ## Total Development Period
