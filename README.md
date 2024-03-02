@@ -40,7 +40,8 @@
 ### Music
 
 > The music used in this project is sourced from the _Final Fantasy IV Original Soundtrack_ and _Final Fantasy VIII Original Soundtrack_ albums composed by Nobuo Uematsu
-> Final Fantasy IV Original Soundtrack - Suspicion
-> Final Fantasy IV Original Soundtrack - Fight 2
-> Final Fantasy VIII Original Soundtrack - Continue
-> Final Fantasy VIII Original Soundtrack - Fanfare
+>
+> - Final Fantasy IV Original Soundtrack - Suspicion
+> - Final Fantasy IV Original Soundtrack - Fight 2
+> - Final Fantasy VIII Original Soundtrack - Continue
+> - Final Fantasy VIII Original Soundtrack - Fanfare
