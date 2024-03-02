@@ -113,15 +113,12 @@ a:hover {
 }
 
 /* Sprites */
-
 #player {
   height: 25rem;
-  /* height: 400px; */
 }
 
 #enemy {
   height: 25rem;
-  /* height: 400px; */
 }
 
 /* Speech bubbles */
@@ -157,4 +154,10 @@ a:hover {
 #musicmenu {
   position: absolute;
   bottom: 10px;
+}
+
+.last {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
