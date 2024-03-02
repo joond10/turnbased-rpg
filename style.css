@@ -152,12 +152,6 @@ a:hover {
 /* Music toggle  */
 
 #musicmenu {
-  position: absolute;
-  bottom: 10px;
-}
-
-.last {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+  /* position: absolute; */
+  /* bottom: 10px; */
 }

@@ -23,82 +23,79 @@
       autoplay
       muted
     ></audio>
-    <div class="last">
-      <!-- Health bars  -->
-      <div class="flex">
-        <div id="player-health">
-          <p>100 HP</p>
-        </div>
-        <div id="enemy-health">
-          <p>100 HP</p>
-        </div>
+    <!-- Health bars  -->
+    <div class="flex">
+      <div id="player-health">
+        <p>100 HP</p>
       </div>
-
-      <!-- Sprite animations -->
-      <div class="flex">
-        <img id="player" src="img/playerdefault.png" alt="Player Character" />
-        <img id="enemy" src="img/enemydefault.png" alt="Enemy" />
-      </div>
-
-      <!-- Player action menu/speech -->
-      <div class="flex">
-        <ul id="action-menu">
-          <p id="player-speech">
-            "Today is the day that you LOSE! DRAW YOUR SWORD!"
-          </p>
-          <li><button class="btn" id="next" hidden>NEXT</button></li>
-          <li>
-            <button class="btn action" id="attack" hidden>
-              ATTACK
-              <span class="material-symbols-outlined" hidden="true"
-                >swords</span
-              >
-            </button>
-          </li>
-          <li>
-            <button class="btn action" id="defend" hidden>
-              DEFEND <i class="fa-solid fa-shield-halved"></i>
-            </button>
-          </li>
-          <li>
-            <button class="btn action" id="spell" hidden>
-              MAGIC <i class="fa-solid fa-hand-sparkles"></i>
-            </button>
-          </li>
-          <li><button class="btn" id="heal" hidden>HEAL</button></li>
-          <li><button class="btn" id="continue" hidden>Continue</button></li>
-        </ul>
-
-        <!-- Enemy speech -->
-        <div id="enemy-speech">
-          <p>
-            "You're sorely mistaken if you think you can beat me, little
-            brother..."
-          </p>
-        </div>
-      </div>
-
-      <!-- Announcer speech and game buttons -->
-      <div id="announcer">
-        <p id="announcer-speech">A fated battle between two brothers!!</p>
-        <button class="btn" id="begin">Begin</button>
-        <button class="btn" id="retry" hidden>Try again?</button>
-        <button class="btn" id="credits" hidden>
-          <a
-            href="https://github.com/joond10/turnbased-rpg/tree/main/credits"
-            target="_blank"
-            >Credits</a
-          >
-        </button>
+      <div id="enemy-health">
+        <p>100 HP</p>
       </div>
     </div>
 
-    <!-- Music toggle -->
+    <!-- Sprite animations -->
+    <div class="flex">
+      <img id="player" src="img/playerdefault.png" alt="Player Character" />
+      <img id="enemy" src="img/enemydefault.png" alt="Enemy" />
+    </div>
+
+    <!-- Player action menu/speech -->
+    <div class="flex">
+      <ul id="action-menu">
+        <p id="player-speech">
+          "Today is the day that you LOSE! DRAW YOUR SWORD!"
+        </p>
+        <li><button class="btn" id="next" hidden>NEXT</button></li>
+        <li>
+          <button class="btn action" id="attack" hidden>
+            ATTACK
+            <span class="material-symbols-outlined" hidden="true">swords</span>
+          </button>
+        </li>
+        <li>
+          <button class="btn action" id="defend" hidden>
+            DEFEND <i class="fa-solid fa-shield-halved"></i>
+          </button>
+        </li>
+        <li>
+          <button class="btn action" id="spell" hidden>
+            MAGIC <i class="fa-solid fa-hand-sparkles"></i>
+          </button>
+        </li>
+        <li><button class="btn" id="heal" hidden>HEAL</button></li>
+        <li><button class="btn" id="continue" hidden>Continue</button></li>
+      </ul>
+
+      <!-- Enemy speech -->
+      <div id="enemy-speech">
+        <p>
+          "You're sorely mistaken if you think you can beat me, little
+          brother..."
+        </p>
+      </div>
+    </div>
+
+    
+    <!-- Announcer speech and game buttons -->
+    <div id="announcer">
+      <p id="announcer-speech">A fated battle between two brothers!!</p>
+      <button class="btn" id="begin">Begin</button>
+      <button class="btn" id="retry" hidden>Try again?</button>
+      <button class="btn" id="credits" hidden>
+        <a
+        href="https://github.com/joond10/turnbased-rpg/tree/main/credits"
+        target="_blank"
+        >Credits</a
+        >
+      </button>
+    </div>
+  </div>
+
+  <!-- Music toggle -->
     <div id="musicmenu">
       <button class="btn" id="musictoggle">
         <i class="fa-solid fa-music"></i><span> Toggle music</span>
       </button>
-    </div>
 
     <script src="script.js"></script>
   </body>
