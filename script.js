@@ -331,7 +331,7 @@ attack.addEventListener("mouseleave", function () {
 });
 
 defend.addEventListener("mouseover", function () {
-  information.innerText = "Next attack reduced by 67%";
+  information.innerText = "Reduce next attack by 67%";
   information.removeAttribute("hidden");
 });
 
