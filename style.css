@@ -69,8 +69,8 @@ a:hover {
   color: white;
 }
 
-#spell {
-  width: 91px;
+.action {
+  width: 100px;
 }
 
 .btn:hover {
