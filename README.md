@@ -33,7 +33,7 @@
 
 ## Battle Actions
 
-<img src="assets/battle-menu" alt="Battle Menu"/>
+<img src="assets/battle-menu.gif" alt="Battle menu"/>
 
 > - **Attack** - Deals 20 damage to opponent
 > - **Defend** - Reduces the next incoming attack by 67%
@@ -41,13 +41,23 @@
 
 ## Features
 
-<img src="assets/dynamic-health-bar.gif" alt="Health bars"/>
+<img src="assets/dynamic-battle.gif" alt="Dynamic battle"/>
 
 > - **Health Bar Modification**: The health bar dynamically adjusts to reflect changes in health status, ranging from full to low health.
 > - **Sprite Animations**: Sprite animations are controlled using `setTimeout`, enabling smooth transitions between different states.
 > - **Dynamic Button Display**: Depending on the game's execution, different buttons are shown to the user, providing contextually relevant options.
 > - **Information Bubbles**: Action buttons dynamically insert information bubbles, elucidating their respective functions upon interaction.
 > - **Music Toggle**: Users can toggle the music on/off with the dedicated music button, offering control over the audio experience.
+
+## Unique sequences
+
+### Victory
+
+<img src="assets/victory.gif" alt="Victory"/>
+
+### Defeat
+
+<img src="assets/defeat.gif" alt="Defeat"/>
 
 ## Project Challenges
 
