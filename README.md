@@ -51,13 +51,13 @@
 
 ## Project Challenges
 
-> I went into this project not knowing anything about the flexbox layout model in CSS. Initially, I tried to design and develop the styling without it which proved to be difficult. In the the process, I learned about flexbox which provided a more efficient way to arrange, align, and distribute space among items in a container, even when their size is unknown or dynamic. Even then, I found it difficult to accomplish what I had in mind but I was able to successfully implement nested flexbox layouts as shown by the information displayed upon action button hover.
-> Testing my web application on various devices revealed viewport issues. Although it appeared as intended on my own device, discrepancies arose on others. To address this, I employed percentage-based dimensions for the images by wrapping them in a container and manipulating that as opposed to the images. This ensured dynamic sizing relative to the user's screen, regardless of resolution variations.
+> - I went into this project not knowing anything about the flexbox layout model in CSS. Initially, I tried to design and develop the styling without it which proved to be difficult. In the the process, I learned about flexbox which provided a more efficient way to arrange, align, and distribute space among items in a container, even when their size is unknown or dynamic. Even then, I found it difficult to accomplish what I had in mind but I was able to successfully implement nested flexbox layouts as shown by the information displayed upon action button hover.
+> - Testing my web application on various devices revealed viewport issues. Although it appeared as intended on my own device, discrepancies arose on others. To address this, I employed percentage-based dimensions for the images by wrapping them in a container and manipulating that as opposed to the images. This ensured dynamic sizing relative to the user's screen, regardless of resolution variations.
 
 ## Future Updates
 
-> In future updates, I plan to address the current lack of responsiveness in the project by implementing a responsive design. At present, the project does not adapt adequately to mobile viewports.
-> May implement a 2 player mode functionality of the application.
+> - In future updates, I plan to address the current lack of responsiveness in the project by implementing a responsive design. At present, the project does not adapt adequately to mobile viewports.
+> - May implement a 2 player mode functionality of the application.
 
 ## Credits
 
