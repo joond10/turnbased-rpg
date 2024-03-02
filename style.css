@@ -15,7 +15,7 @@
 }
 
 html {
-  height: 100vh;
+  height: 100%;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 
 a {
