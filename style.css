@@ -12,6 +12,7 @@
   box-sizing: border-box;
   font-family: "VT323", monospace;
   font-weight: 400;
+  overflow: hidden;
 }
 
 html,
@@ -174,7 +175,6 @@ a:hover {
 .pictures {
   height: 40%;
 }
-
 
 .information {
   text-align: center;
