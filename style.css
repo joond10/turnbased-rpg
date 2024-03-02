@@ -69,6 +69,10 @@ a:hover {
   color: white;
 }
 
+#spell {
+  width: 91px;
+}
+
 .btn:hover {
   color: coral;
   cursor: pointer;
