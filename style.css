@@ -14,13 +14,16 @@
   font-weight: 400;
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   background-image: linear-gradient(to right, rgb(27, 128, 223), #feb47b);
   background-size: cover;
   background-position: center;
   position: relative;
   height: 100vh;
-  overflow: hidden;
 }
 
 a {
