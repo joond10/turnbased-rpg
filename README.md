@@ -6,9 +6,8 @@
 
 ## Deployment
 
-> This application is hosted on [Vercel](https://vercel.com/){:target="_blank"}. 
-> The deployed website can be accessed [here](https://duel-rpg.vercel.app/){:target="_blank"}.
-
+> This application is hosted on <a href="https://vercel.com/" target="_blank">Vercel</a>.
+> The deployed website can be accessed <a href="https://duel-rpg.vercel.app/" target="_blank">here</a>.
 
 ## Total Development Period
 
