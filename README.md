@@ -33,7 +33,7 @@
 
 ## Battle Actions
 
-<img src="assets/action-menu.gif" alt="Battle actions"/>
+<img src="assets/battle-menu" alt="Battle Menu"/>
 
 > - **Attack** - Deals 20 damage to opponent
 > - **Defend** - Reduces the next incoming attack by 67%
