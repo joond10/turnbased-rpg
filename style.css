@@ -42,6 +42,10 @@ a:hover {
   justify-content: space-between;
 }
 
+.this-flex {
+  margin: 0;
+}
+
 /* .flex #player,
 #enemy {
   margin-top: 50px;
