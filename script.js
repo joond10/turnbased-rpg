@@ -37,6 +37,9 @@ let credits = document.querySelector("#credits");
 let enemySpeech = document.querySelector("#enemy-speech");
 let playerSpeech = document.querySelector("#player-speech");
 let announcerSpeech = document.querySelector("#announcer-speech");
+let information = document.querySelector(".information");
+
+let list = document.querySelector(".list");
 
 //Health bar
 let playerHealth = document.querySelector("#player-health");
@@ -109,6 +112,7 @@ function enemyProudAnimation() {
 //Initiate game function
 begin.addEventListener("click", function () {
   playerSpeech.setAttribute("hidden", true);
+  list.removeAttribute("hidden");
   showActionMenu();
   begin.setAttribute("hidden", true);
   playerFightingStanceAnimation();
@@ -121,7 +125,7 @@ begin.addEventListener("click", function () {
 attack.addEventListener("click", function () {
   playerAttackAnimation();
   enemySpeech.innerText = `"AGH!"`;
-  announcerSpeech.innerText = "20 damage dealt!!";
+  announcerSpeech.innerText = "20 damage dealt!";
   next.removeAttribute("hidden");
   enemyReceiveDamage();
   hideActionMenu();
@@ -129,7 +133,7 @@ attack.addEventListener("click", function () {
 
 defend.addEventListener("click", function () {
   playerDefendAnimation();
-  announcerSpeech.innerText = "67% damage reduction on next attack!!";
+  announcerSpeech.innerText = "Player defends!";
   enemySpeech.innerText = "A shield?!";
   hideActionMenu();
   next.removeAttribute("hidden");
@@ -148,11 +152,12 @@ heal.addEventListener("click", function () {
   enemySpeech.innerText = `"WHAT?! IMPOSSIBLE! Where did you learn such sorcery?!"`;
   playerCurrentHealth += 50;
   if (playerCurrentHealth > 100) {
-    announcerSpeech.innerText = "Full health!!";
+    announcerSpeech.innerText =
+      100 - (playerCurrentHealth - 50) + " health restored! Full health!";
     playerCurrentHealth = playerInitialHealth;
     playerCurrentHealthBarWidth = playerFullHealthBarWidth;
   } else {
-    announcerSpeech.innerText = "50 HP restored!!";
+    announcerSpeech.innerText = "50 HP restored!";
     playerCurrentHealthBarWidth += (50 / 100) * playerFullHealthBarWidth;
   }
   playerHealth.style.width = playerCurrentHealthBarWidth + "px";
@@ -171,9 +176,9 @@ next.addEventListener("click", function () {
   enemyAttackAnimation();
   enemySpeech.innerText = `"TAKE THIS!"`;
   if (defenseStance === true) {
-    announcerSpeech.innerText = "10 damage received!!";
+    announcerSpeech.innerText = "10 damage received!";
   } else {
-    announcerSpeech.innerText = "30 damage received!!";
+    announcerSpeech.innerText = "30 damage received!";
   }
   next.setAttribute("hidden", true);
   showActionMenu();
@@ -248,6 +253,7 @@ function gameOver() {
   music.src =
     "https://fi.zophar.net/soundfiles/playstation-psf/final-fantasy-vii/215%20Continue.mp3";
   hideActionMenu();
+  list.setAttribute("hidden", true);
   setTimeout(function () {
     animation[1].src = "img/enemywinner.png";
   }, 2000); // 2000 milliseconds = 2 seconds
@@ -275,6 +281,7 @@ function victory() {
 
 ending.addEventListener("click", function () {
   playerHealth.remove();
+  list.setAttribute("hidden", true);
   playerSpeech.innerText = `"I did it... I DID IT!"`;
   retry.innerHTML = "Play again?";
   animation[0].src = "img/playerdefault.png";
@@ -312,3 +319,33 @@ musictoggle.addEventListener("click", function () {
 
 //Credits button
 credits.addEventListener("click", function () {});
+
+attack.addEventListener("mouseover", function () {
+  information.innerText = "Deal 20 attack damage";
+  information.removeAttribute("hidden");
+});
+
+attack.addEventListener("mouseleave", function () {
+  information.innerText = "";
+  information.setAttribute("hidden", true);
+});
+
+defend.addEventListener("mouseover", function () {
+  information.innerText = "Next attack reduced by 67%";
+  information.removeAttribute("hidden");
+});
+
+defend.addEventListener("mouseleave", function () {
+  information.innerText = "";
+  information.setAttribute("hidden", true);
+});
+
+spell.addEventListener("mouseover", function () {
+  information.innerText = "Open spell menu";
+  information.removeAttribute("hidden");
+});
+
+spell.addEventListener("mouseleave", function () {
+  information.innerText = "";
+  information.setAttribute("hidden", true);
+});

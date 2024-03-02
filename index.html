@@ -41,30 +41,39 @@
 
     <!-- Player action menu/speech -->
     <div class="flex">
-      <ul id="action-menu">
-        <p id="player-speech">
-          "Today is the day that you LOSE! DRAW YOUR SWORD!"
-        </p>
-        <li><button class="btn" id="next" hidden>NEXT</button></li>
-        <li>
-          <button class="btn action" id="attack" hidden>
-            ATTACK
-            <span class="material-symbols-outlined" hidden="true">swords</span>
-          </button>
-        </li>
-        <li>
-          <button class="btn action" id="defend" hidden>
-            DEFEND <i class="fa-solid fa-shield-halved"></i>
-          </button>
-        </li>
-        <li>
-          <button class="btn action" id="spell" hidden>
-            MAGIC <i class="fa-solid fa-hand-sparkles"></i>
-          </button>
-        </li>
-        <li><button class="btn" id="heal" hidden>HEAL</button></li>
-        <li><button class="btn" id="continue" hidden>Continue</button></li>
-      </ul>
+        <div class="flex" id="action-menu">
+          <p id="player-speech">
+            "Today is the day that you LOSE! DRAW YOUR SWORD!"
+          </p>
+          <div class="list" hidden>    
+            <ul>
+              <li><button class="btn" id="next" hidden>NEXT</button></li>
+              <li>
+                <button class="btn action" id="attack" hidden>
+                  ATTACK
+                  <span class="material-symbols-outlined" hidden="true">swords</span>
+                </button>
+              </li>
+              <li>
+                <button class="btn action" id="defend" hidden>
+                  DEFEND <i class="fa-solid fa-shield-halved"></i>
+                </button>
+              </li>
+              <li>
+                <button class="btn action" id="spell" hidden>
+                  MAGIC <i class="fa-solid fa-hand-sparkles"></i>
+                </button>
+              </li>
+              <li><button class="btn" id="heal" hidden>HEAL</button></li>
+              <li><button class="btn" id="continue" hidden>Continue</button></li>
+            </ul>
+          </div>
+          <div class="information" hidden>
+            <p>Deal 20 attack damage</p>
+          </div>
+        </div>
+
+
 
       <!-- Enemy speech -->
       <div id="enemy-speech">
