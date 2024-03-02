@@ -4,9 +4,14 @@
 
 > DUEL! is a dynamic web application designed to emulate the magic of classic RPGs. It provides a fully functional turn-based combat system reminiscent of iconic titles such as Final Fantasy and Dragon Quest. DUEL! utilizes DOM manipulation to enhance interactivity, providing players with an action menu where each button triggers a unique sequence. Additionally, there's a fully built victory sequence to celebrate winning and a game over sequence for defeats.
 
+## Deployment
+
+> This application is hosted on [Vercel](https://vercel.com/).
+> The deployed website can be accessed [here](https://duel-rpg.vercel.app/)
+
 ## Total Development Period
 
-> 02-28-2024 ~ 03-01-2024
+> 02-28-2024 ~ 03-02-2024
 
 ## Tech Stack
 
@@ -30,22 +35,29 @@
 
 <img src="assets/action-menu.gif" alt="Battle actions"/>
 
-> - Attack - Deals 20 damage to opponent
-> - Defend - Reduces the next incoming attack by 67%
-> - Magic - Heal spell restores 50 HP
+> - **Attack** - Deals 20 damage to opponent
+> - **Defend** - Reduces the next incoming attack by 67%
+> - **Magic** - Heal spell restores 50 HP
 
-## Dynamic Elements
+## Features
 
 <img src="assets/dynamic-health-bar.gif" alt="Health bars"/>
 
-> - Actions modify health bar signifying full to low health
-> - Sprite animations changed using setTimeout
-> - Different buttons shown depending on game execution
-> - Toggle music button to mute or unmute audio music
+> - **Health Bar Modification**: The health bar dynamically adjusts to reflect changes in health status, ranging from full to low health.
+> - **Sprite Animations**: Sprite animations are controlled using `setTimeout`, enabling smooth transitions between different states.
+> - **Dynamic Button Display**: Depending on the game's execution, different buttons are shown to the user, providing contextually relevant options.
+> - **Information Bubbles**: Action buttons dynamically insert information bubbles, elucidating their respective functions upon interaction.
+> - **Music Toggle**: Users can toggle the music on/off with the dedicated music button, offering control over the audio experience.
 
-## Project challenges
+## Project Challenges
 
-> I went into this project not knowing anything about the flexbox layout model in CSS. Initially, I tried to design and develop the styling without it which proved to be difficult. In the the process, I learned about flexbox which provided a more efficient way to arrange, align, and distribute space among items in a container, even when their size is unknown or dynamic.
+> I went into this project not knowing anything about the flexbox layout model in CSS. Initially, I tried to design and develop the styling without it which proved to be difficult. In the the process, I learned about flexbox which provided a more efficient way to arrange, align, and distribute space among items in a container, even when their size is unknown or dynamic. Even then, I found it difficult to accomplish what I had in mind but I was able to successfully implement nested flexbox layouts as shown by the information displayed upon action button hover.
+> Testing my web application on various devices revealed viewport issues. Although it appeared as intended on my own device, discrepancies arose on others. To address this, I employed percentage-based dimensions for the images by wrapping them in a container and manipulating that as opposed to the images. This ensured dynamic sizing relative to the user's screen, regardless of resolution variations.
+
+## Future Updates
+
+> In future updates, I plan to address the current lack of responsiveness in the project by implementing a responsive design. At present, the project does not adapt adequately to mobile viewports.
+> May implement a 2 player mode functionality of the application.
 
 ## Credits
 
