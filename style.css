@@ -42,10 +42,10 @@ a:hover {
   justify-content: space-between;
 }
 
-.flex #player,
+/* .flex #player,
 #enemy {
   margin-top: 50px;
-}
+} */
 
 /* Action menu and button styling */
 
@@ -173,6 +173,7 @@ a:hover {
 
 .pictures {
   height: 40%;
+  margin-top: 50px;
 }
 
 .information {
