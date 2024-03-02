@@ -14,10 +14,6 @@
   font-weight: 400;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   background-image: linear-gradient(to right, rgb(27, 128, 223), #feb47b);
   background-size: cover;
