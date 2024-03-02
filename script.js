@@ -39,6 +39,7 @@ let playerSpeech = document.querySelector("#player-speech");
 let announcerSpeech = document.querySelector("#announcer-speech");
 let information = document.querySelector(".information");
 
+//Action menu
 let list = document.querySelector(".list");
 
 //Health bar
@@ -121,7 +122,7 @@ begin.addEventListener("click", function () {
     "https://fi.zophar.net/soundfiles/nintendo-snes-spc/final-fantasy-iv/13%20Fight%202.mp3";
 });
 
-//Action menu event handlers
+//Action menu click functions
 attack.addEventListener("click", function () {
   playerAttackAnimation();
   enemySpeech.innerText = `"AGH!"`;
@@ -320,6 +321,7 @@ musictoggle.addEventListener("click", function () {
 //Credits button
 credits.addEventListener("click", function () {});
 
+//Hover functions
 attack.addEventListener("mouseover", function () {
   information.innerText = "Deal 20 attack damage";
   information.removeAttribute("hidden");
