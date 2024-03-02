@@ -33,7 +33,7 @@
 
 ## Battle Actions
 
-<img src="assets/battle-menu.gif" alt="Battle menu"/>
+<img src="assets/actions.gif" alt="Battle menu"/>
 
 > - **Attack** - Deals 20 damage to opponent
 > - **Defend** - Reduces the next incoming attack by 67%
@@ -41,7 +41,7 @@
 
 ## Features
 
-<img src="assets/dynamic-battle.gif" alt="Dynamic battle"/>
+<img src="assets/battle.gif" alt="Dynamic battle"/>
 
 > - **Health Bar Modification**: The health bar dynamically adjusts to reflect changes in health status, ranging from full to low health.
 > - **Sprite Animations**: Sprite animations are controlled using `setTimeout`, enabling smooth transitions between different states.
@@ -53,11 +53,11 @@
 
 ### Victory
 
-<img src="assets/victory.gif" alt="Victory"/>
+<img src="assets/victory1.gif" alt="Victory"/>
 
 ### Defeat
 
-<img src="assets/defeat.gif" alt="Defeat"/>
+<img src="assets/defeat1.gif" alt="Defeat"/>
 
 ## Project Challenges
 
@@ -68,6 +68,7 @@
 
 > - In future updates, I plan to address the current lack of responsiveness in the project by implementing a responsive design. At present, the project does not adapt adequately to mobile viewports.
 > - May implement a 2 player mode functionality of the application.
+> - Seems to be latency issues perhaps due to large png files. I may have to try compressing them to better load times.
 
 ## Credits
 
