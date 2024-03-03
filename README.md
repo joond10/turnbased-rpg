@@ -68,7 +68,7 @@
 
 > - I became comfortable and proficient with the inspector tool, breaking down layouts into boxes and containers which ensured accuracy to minimize backtracking during development.
 > - I've learned my lesson to prioritize cross-browser and cross-device checking for precise measurements.
-> - For future projects, I will embrace pre-implementation design by envisioning during planning stage.
+> - For future projects, I will embrace pre-implementation design during the planning stages before actual implementation.
 > - Developed a discerning eye for detecting misalignments and inconsistencies.
 
 ## Future Updates
