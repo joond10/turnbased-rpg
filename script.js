@@ -283,7 +283,7 @@ function victory() {
 
 ending.addEventListener("click", function () {
   let pictures = document.querySelector(".pictures");
-  pictures.style.marginTop = "86px";
+  pictures.style.marginTop = "80px";
   playerHealth.remove();
   list.setAttribute("hidden", true);
   playerSpeech.innerText = `"I did it... I DID IT!"`;
