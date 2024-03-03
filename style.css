@@ -37,6 +37,7 @@ a:hover {
 /* Flex box */
 
 .flex {
+  position: relative;
   margin-top: 6px;
   display: flex;
   justify-content: space-between;
@@ -153,8 +154,13 @@ a:hover {
 }
 
 #announcer {
+  position: fixed;
+  top: 60%; /* Adjust as needed */
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  margin: auto;
   font-size: 20px;
   background-image: linear-gradient(to right, darkblue, rgb(2, 2, 165));
   width: 300px;

@@ -251,6 +251,8 @@ function hideActionMenu() {
 
 //Game over sequence functions
 function gameOver() {
+  let pictures = document.querySelector(".pictures");
+  pictures.style.marginTop = "80px";
   music.src =
     "https://fi.zophar.net/soundfiles/playstation-psf/final-fantasy-vii/215%20Continue.mp3";
   hideActionMenu();
@@ -281,6 +283,8 @@ function victory() {
 }
 
 ending.addEventListener("click", function () {
+  let pictures = document.querySelector(".pictures");
+  pictures.style.marginTop = "86px";
   playerHealth.remove();
   list.setAttribute("hidden", true);
   playerSpeech.innerText = `"I did it... I DID IT!"`;
