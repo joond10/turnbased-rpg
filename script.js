@@ -153,8 +153,7 @@ heal.addEventListener("click", function () {
   enemySpeech.innerText = `"WHAT?! IMPOSSIBLE! Where did you learn such sorcery?!"`;
   playerCurrentHealth += 50;
   if (playerCurrentHealth >= 100) {
-    announcerSpeech.innerText =
-      100 - (playerCurrentHealth - 50) + " health restored! Full health!";
+    announcerSpeech.innerText = "Full health!";
     playerCurrentHealth = playerInitialHealth;
     playerCurrentHealthBarWidth = playerFullHealthBarWidth;
   } else {
