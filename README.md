@@ -2,16 +2,16 @@
 
  <img src="assets/start.png" alt="Opening sequence"/>
 
-> DUEL! is a dynamic web application designed to emulate the magic of classic RPGs. It provides a fully functional turn-based combat system reminiscent of iconic titles such as Final Fantasy and Dragon Quest. DUEL! utilizes DOM manipulation to enhance interactivity, providing players with an action menu where each button triggers a unique sequence. Additionally, there's a fully built victory sequence to celebrate winning and a game over sequence for defeats.
+DUEL! is a dynamic web application designed to emulate the magic of classic RPGs. It provides a fully functional turn-based combat system reminiscent of iconic titles such as Final Fantasy and Dragon Quest. DUEL! utilizes DOM manipulation to enhance interactivity, providing players with an action menu where each button triggers a unique sequence. Additionally, there's a fully built victory sequence to celebrate winning and a game over sequence for defeats.
 
 ## Deployment
 
-> - This application is hosted on <a href="https://vercel.com/" target="_blank">Vercel</a>.
-> - The deployed website can be accessed <a href="https://duel-rpg.vercel.app/" target="_blank">here</a>.
+- This application is hosted on <a href="https://vercel.com/" target="_blank">Vercel</a>.
+- The deployed website can be accessed <a href="https://duel-rpg.vercel.app/" target="_blank">here</a>.
 
 ## Total Development Period
 
-> 02-28-2024 ~ 03-02-2024
+02-28-2024 ~ 03-02-2024
 
 ## Tech Stack
 
@@ -19,35 +19,35 @@
 
 ## Project Objectives
 
-> ### Hone Skills in JavaScript, HTML, and CSS:
->
-> The primary objective of this project is to refine proficiency and gain a deeper understanding of web development technologies.
->
-> ### Learn DOM Manipulation:
->
-> Become comfortable with DOM manipulation by utilizing JavaScript techniques to manipulate different attributes like 'hidden' to manage visibility and employing <i>setTimeout</i> for timing events to enhance the functionality and user experience of the application.
->
-> ### Develop Creative Styling Techniques:
->
-> Explore creative approaches to styling using CSS to enhance the visual appeal and user experience of the application while also demonstrating proficiency in CSS.
+### Hone Skills in JavaScript, HTML, and CSS:
+
+ The primary objective of this project is to refine proficiency and gain a deeper understanding of web development technologies.
+
+### Learn DOM Manipulation:
+
+Become comfortable with DOM manipulation by utilizing JavaScript techniques to manipulate different attributes like 'hidden' to manage visibility and employing <i>setTimeout</i> for timing events to enhance the functionality and user experience of the application.
+
+### Develop Creative Styling Techniques:
+
+Explore creative approaches to styling using CSS to enhance the visual appeal and user experience of the application while also demonstrating proficiency in CSS.
 
 ## Battle Actions
 
 <img src="assets/menu.gif" alt="Battle menu"/>
 
-> - **Attack** - Deals 20 damage to opponent
-> - **Defend** - Reduces the next incoming attack by 67%
-> - **Magic** - Heal spell restores 50 HP
+- **Attack** - Deals 20 damage to opponent
+- **Defend** - Reduces the next incoming attack by 67%
+- **Magic** - Heal spell restores 50 HP
 
 ## Features
 
 <img src="assets/action.gif" alt="Dynamic battle"/>
 
-> - **Health Bar Modification**: The health bar dynamically adjusts to reflect changes in health status, ranging from full to low health.
-> - **Sprite Animations**: Sprite animations are controlled using `setTimeout`, enabling smooth transitions between different states.
-> - **Dynamic Button Display**: Depending on the game's execution, different buttons are shown to the user, providing contextually relevant options.
-> - **Information Bubbles**: Action buttons dynamically insert information bubbles, elucidating their respective functions upon interaction.
-> - **Music Toggle**: Users can toggle the music on/off with the dedicated music button, offering control over the audio experience.
+- **Health Bar Modification**: The health bar dynamically adjusts to reflect changes in health status, ranging from full to low health.
+- **Sprite Animations**: Sprite animations are controlled using `setTimeout`, enabling smooth transitions between different states.
+- **Dynamic Button Display**: Depending on the game's execution, different buttons are shown to the user, providing contextually relevant options.
+- **Information Bubbles**: Action buttons dynamically insert information bubbles, elucidating their respective functions upon interaction.
+- **Music Toggle**: Users can toggle the music on/off with the dedicated music button, offering control over the audio experience.
 
 ## Unique sequences
 
@@ -61,21 +61,21 @@
 
 ## Project Challenges
 
-> - I went into this project not knowing anything about the flexbox layout model in CSS. Initially, I tried to design and develop the styling without it which proved to be difficult. In the the process, I learned about flexbox which provided a more efficient way to arrange, align, and distribute space among items in a container, even when their size is unknown or dynamic. Even then, I found it difficult to accomplish what I had in mind but I was able to successfully implement nested flexbox layouts as shown by the information displayed upon action button hover.
-> - Testing my web application on various devices revealed viewport issues. Although it appeared as intended on my own device, discrepancies arose on others. To address this, I employed percentage-based dimensions for the images by wrapping them in a container and manipulating that as opposed to the images. This ensured dynamic sizing relative to the user's screen, regardless of resolution variations.
+- I went into this project not knowing anything about the flexbox layout model in CSS. Initially, I tried to design and develop the styling without it which proved to be difficult. In the the process, I learned about flexbox which provided a more efficient way to arrange, align, and distribute space among items in a container, even when their size is unknown or dynamic. Even then, I found it difficult to accomplish what I had in mind but I was able to successfully implement nested flexbox layouts as shown by the information displayed upon action button hover.
+- Testing my web application on various devices revealed viewport issues. Although it appeared as intended on my own device, discrepancies arose on others. To address this, I employed percentage-based dimensions for the images by wrapping them in a container and manipulating that as opposed to the images. This ensured dynamic sizing relative to the user's screen, regardless of resolution variations.
 
 ## Project Takeaways
 
-> - I became comfortable and proficient with the inspector tool, breaking down layouts into boxes and containers which ensured accuracy to minimize backtracking during development.
-> - I've learned my lesson to prioritize cross-browser and cross-device checking for precise measurements.
-> - For future projects, I will embrace pre-implementation design during the planning stages before actual implementation.
-> - Developed a discerning eye for detecting misalignments and inconsistencies.
+- I became comfortable and proficient with the inspector tool, breaking down layouts into boxes and containers which ensured accuracy to minimize backtracking during development.
+- I've learned my lesson to prioritize cross-browser and cross-device checking for precise measurements.
+- For future projects, I will embrace pre-implementation design during the planning stages before actual implementation.
+- Developed a discerning eye for detecting misalignments and inconsistencies.
 
 ## Future Updates
 
-> - In future updates, I plan to address the current lack of responsiveness in the project by implementing a responsive design. At present, the project does not adapt adequately to mobile viewports.
-> - May implement a 2 player mode functionality of the application.
-> - There seems to be latency issues perhaps due to large png files. I may have to try compressing them to better load times.
+- In future updates, I plan to address the current lack of responsiveness in the project by implementing a responsive design. At present, the project does not adapt adequately to mobile viewports.
+- May implement a 2 player mode functionality of the application.
+- There seems to be latency issues perhaps due to large png files. I may have to try compressing them to better load times.
 
 ## Credits
 
