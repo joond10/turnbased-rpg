@@ -307,7 +307,7 @@ ending.addEventListener("click", function () {
   }, 13000);
   setTimeout(function () {
     playerSpeech.innerText = `"Thanks for playing!"`;
-    enemySpeech.innerText = `"Thanks for playing!`;
+    enemySpeech.innerText = `"Thanks for playing!"`;
     spritesThankingAnimation();
     retry.removeAttribute("hidden");
     credits.removeAttribute("hidden");
